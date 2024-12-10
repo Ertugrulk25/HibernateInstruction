@@ -14,7 +14,6 @@ import javax.persistence.Table;
 @Entity //Bu sınıfın Databasede bir tabloya karşılık gelmesini sağlar,tablo adı: student
 @Table(name= "t_student")//tablomuzun istedigimiz ismi verilmesini saglar
 //biz burada pojo classları direkt olarak buyuk harfle
-
 public class Student {
     //DB SQL'CE t_student isimlendirilir
 
@@ -34,6 +33,10 @@ public class Student {
         this.name = name;
         this.surname = surname;
         this.grade = grade;
+    }
+
+    public Student() {
+
     }
 
     public Integer getId() {
