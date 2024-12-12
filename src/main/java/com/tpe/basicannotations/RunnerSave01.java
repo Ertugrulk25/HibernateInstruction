@@ -62,3 +62,4 @@ public class RunnerSave01 {
     sessionFactory.close();
     }
 }
+

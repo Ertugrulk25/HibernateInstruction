@@ -4,7 +4,6 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -57,6 +56,13 @@ public class RunnerFetch01 {
             System.out.println(s);
         }
 // sql ile tüm kayıtları çekelim
+        System.out.println("---------------- SQL -------------------");
+        String sql4 ="select * from t_student ";
+        List<Object[]> student4= session.createSQLQuery(sql4).getResultList();
+        System.out.println("Tüm öğrenciler: ");
+        for (Object[] st : student4){
+            System.out.println(Arrays.toString(st));
+        }
 
         //HQL ile grade değeri 98 olan öğrencilerin id ve name bilgilerini getirin.
         String hql2="select id,name from Student where grade=98";
@@ -74,7 +80,33 @@ public class RunnerFetch01 {
     //SQL ile
     //1-tüm öğrencilerin sadece isimlerini getirelim
 
+//------------ODEV------------
+//practice:HQL ile
 
+        System.out.println("-----------------ODEV----------------");
+//1-ismi Ali Can olan öğrencileri getirelim
+        String hql3 = "FROM Student WHERE name = 'Ali' and surname = 'Can'";
+        List<Student> list1 = session.createQuery(hql3, Student.class).getResultList();
+        for (Student w : list1){
+            System.out.println(w);
+        }
+
+
+//2-tüm öğrencilerin sadece isimlerini getirelim
+        String hql4 = "Select s.name From Student s ";
+        List<String> list2 = session.createQuery(hql4).getResultList();
+        for (String w : list2){
+            System.out.println("Name : "+ w);
+        }
+
+
+//SQL ile
+//1-tüm öğrencilerin sadece isimlerini getirelim
+        String sql1 = "Select std_name From t_student";
+        List<String> studentName = session.createSQLQuery(sql1).getResultList();
+        for (String name : studentName){
+            System.out.println("Name : "+ name);
+        }
 
 
     }
