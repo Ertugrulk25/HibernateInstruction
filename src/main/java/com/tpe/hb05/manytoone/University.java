@@ -1,27 +1,30 @@
-package com.tpe.hb04.bi_onetoone;
+package com.tpe.hb05.manytoone;
 
-
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
-public class Diary04 {
+public class University {//ONE
+
     @Id
     private Integer id;
 
-    @Column(name = "diary_name")
     private String name;
 
-    @OneToOne
-    @JoinColumn(name = "std_id")// bir colum eklensin std_id isminde
-    private Student04 student;
+    //paramsiz const
 
-    public Diary04(Integer id, String name) {
+    public University() {
+    }
+
+    //paramli const
+
+    public University(Integer id, String name) {
         this.id = id;
         this.name = name;
     }
 
-    public Diary04() {
-    }
+
+    //getter-setter
 
     public Integer getId() {
         return id;
@@ -39,17 +42,9 @@ public class Diary04 {
         this.name = name;
     }
 
-    public Student04 getStudent() {
-        return student;
-    }
-
-    public void setStudent(Student04 student) {
-        this.student = student;
-    }
-
     @Override
     public String toString() {
-        return "Diary04{" +
+        return "University{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 '}';

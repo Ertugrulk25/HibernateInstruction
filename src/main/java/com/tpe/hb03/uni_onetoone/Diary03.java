@@ -5,7 +5,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "t_diary")
-public class Diary {//ONE
+public class Diary03 {//ONE
 
     @Id
     private Integer id;
@@ -17,12 +17,12 @@ public class Diary {//ONE
     @JoinColumn(name = "std_id",unique = true)//opsiyonel
     private Student03 student;//ONE
 
-    public Diary(Integer id, String name) {
+    public Diary03(Integer id, String name) {
         this.id = id;
         this.name = name;
     }
 
-    public Diary() {
+    public Diary03() {
     }
 
     public Student03 getStudent() {

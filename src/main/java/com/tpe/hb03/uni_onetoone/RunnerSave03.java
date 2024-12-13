@@ -2,7 +2,6 @@ package com.tpe.hb03.uni_onetoone;
 
 
 
-import com.tpe.hb02.embeddable.Student02;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -14,9 +13,9 @@ public class RunnerSave03 {
         Student03 student2=new Student03(1002,"Veli",98);
         Student03 student3=new Student03(1003,"Ayşe",97);
 
-        Diary diary1=new Diary(11,"X");
-        Diary diary2=new Diary(22,"Y");
-        Diary diary3=new Diary(33,"Z");
+        Diary03 diary1=new Diary03(11,"X");
+        Diary03 diary2=new Diary03(22,"Y");
+        Diary03 diary3=new Diary03(33,"Z");
 
         /**-------------------------------------*/
         //diary1 ile student1 ilişkilendirelim
@@ -26,7 +25,7 @@ public class RunnerSave03 {
 
 
         Configuration config=new Configuration().configure()//hibernate.cfg.xml
-                .addAnnotatedClass(Student03.class).addAnnotatedClass(Diary.class);
+                .addAnnotatedClass(Student03.class).addAnnotatedClass(Diary03.class);
 
         SessionFactory sessionFactory= config.buildSessionFactory();
         Session session=sessionFactory.openSession();

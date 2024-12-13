@@ -1,6 +1,5 @@
 package com.tpe.hb03.uni_onetoone;
 
-import com.tpe.hb02.embeddable.Student02;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -10,7 +9,7 @@ public class RunnerFetch03 {
 
 
         Configuration config = new Configuration().configure().addAnnotatedClass(Student03.class)//hibernate.cfg.xml
-                .addAnnotatedClass(Diary.class);
+                .addAnnotatedClass(Diary03.class);
         SessionFactory sessionFactory = config.buildSessionFactory();
         Session session = sessionFactory.openSession();
         //id 1001 olan öğrenciyi goruntuleyelim
@@ -18,7 +17,7 @@ public class RunnerFetch03 {
         System.out.println(student);
 
         //id 11 olan günlüğü getirelim
-        Diary diary=session.get(Diary.class,11);
+        Diary03 diary=session.get(Diary03.class,11);
         System.out.println(diary);
 
         System.out.println("*******************************");

@@ -1,32 +1,38 @@
-package com.tpe.hb04.bi_onetoone;
-
+package com.tpe.hb06.onetomany;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
-@Table(name = "t_student04")
-public class Student04 {
+@Table(name = "t_student")
+public class Student06 {
 
     @Id
     private Integer id;
-
-    @Column(name = "std_name",nullable = false,unique = true,length = 50)
+    @Column(name = "std_name",nullable = false)
     private String name;
 
     private int grade;
+    @OneToMany //tablolar arasında ilişki kurar.
+@JoinColumn(name = "std_name")// joıntable yapmayarak book tablosuna foreignkey ekler.
+private List<Book> bookList = new ArrayList<>();
 
-
-    @OneToOne(mappedBy = "student")//Dİary04 deki student variable si üzerinden bağlantı kur
-    private Diary04 diary;
-
-    public Student04(Integer id, String name, int grade) {
+    public Student06(Integer id, String name, int grade) {
         this.id = id;
         this.name = name;
         this.grade = grade;
-
     }
 
-    public Student04() {
+    public List<Book> getBookList() {
+        return bookList;
+    }
+
+    public void setBookList(List<Book> bookList) {
+        this.bookList = bookList;
+    }
+
+    public Student06() {
     }
 
     public Integer getId() {
@@ -53,17 +59,9 @@ public class Student04 {
         this.grade = grade;
     }
 
-    public Diary04 getDiary() {
-        return diary;
-    }
-
-    public void setDiary(Diary04 diary) {
-        this.diary = diary;
-    }
-
     @Override
     public String toString() {
-        return "Student04{" +
+        return "Student06{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", grade=" + grade +
