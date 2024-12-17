@@ -7,9 +7,9 @@ import org.hibernate.cfg.Configuration;
 
 public class RunnerSave04 {
     public static void main(String[] args) {
-        Student04 student1=new Student04(1001,"Ayşe Hanım",10);
-        Student04 student2=new Student04(1002,"Ali Bey",5);
-        Student04 student3=new Student04(1003,"Veli Bey",15);
+        Student04 student1=new Student04( "Ayşe Hanım",10);
+        Student04 student2=new Student04("Ali Bey",5);
+        Student04 student3=new Student04("Veli Bey",15);
 
         Diary04 diary1=new Diary04(99,"Ayşenin günlüğü");
         Diary04 diary2=new Diary04(88,"Alinin günlüğü");

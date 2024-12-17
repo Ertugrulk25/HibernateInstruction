@@ -8,6 +8,7 @@ import javax.persistence.*;
 public class Student04 {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Column(name = "std_name",nullable = false,unique = true,length = 50)
@@ -19,8 +20,8 @@ public class Student04 {
     @OneToOne(mappedBy = "student")//Dİary04 deki student variable si üzerinden bağlantı kur
     private Diary04 diary;
 
-    public Student04(Integer id, String name, int grade) {
-        this.id = id;
+    public Student04( String name, int grade) {
+
         this.name = name;
         this.grade = grade;
 
