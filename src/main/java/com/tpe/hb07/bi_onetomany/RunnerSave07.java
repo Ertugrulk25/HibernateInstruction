@@ -1,4 +1,4 @@
-package hb07.bi_onetomany;
+package com.tpe.hb07.bi_onetomany;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

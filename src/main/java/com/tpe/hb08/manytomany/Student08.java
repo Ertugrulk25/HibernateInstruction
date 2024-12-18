@@ -1,4 +1,4 @@
-package hb08.manytomany;
+package com.tpe.hb08.manytomany;
 
 import javax.persistence.*;
 import java.util.ArrayList;

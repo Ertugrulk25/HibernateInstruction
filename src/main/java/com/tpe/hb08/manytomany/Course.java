@@ -1,4 +1,4 @@
-package hb08.manytomany;
+package com.tpe.hb08.manytomany;
 
 
 import javax.persistence.Entity;
@@ -17,7 +17,7 @@ public class Course {
     @ManyToMany (mappedBy = "courseList")//mappedBy kullanmazsak eğer course_Student08 isimli toplamda
     // 2 tane table oluşur(toplam 4 tablo,mappedBy olursa 3 tablo)
 
-List<Student08> student08List = new ArrayList<>();
+List<Student08> studentList = new ArrayList<>();
 
     public Course(Integer id, String name) {
         this.id = id;
@@ -40,12 +40,12 @@ List<Student08> student08List = new ArrayList<>();
         this.name = name;
     }
 
-    public List<Student08> getStudent08List() {
-        return student08List;
+    public List<Student08> getStudentList() {
+        return studentList;
     }
 
-    public void setStudent08List(List<Student08> student08List) {
-        this.student08List = student08List;
+    public void setStudentList(List<Student08> studentList) {
+        this.studentList = studentList;
     }
 
     @Override

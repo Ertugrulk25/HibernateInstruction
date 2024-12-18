@@ -1,6 +1,4 @@
-package hb07.bi_onetomany;
-
-import hb07.bi_onetomany.Book07;
+package com.tpe.hb07.bi_onetomany;
 
 import javax.persistence.*;
 import java.util.ArrayList;

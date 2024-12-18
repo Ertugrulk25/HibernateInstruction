@@ -1,10 +1,7 @@
-package hb07.bi_onetomany;
-
-import hb07.bi_onetomany.Student07;
+package com.tpe.hb07.bi_onetomany;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 @Entity
